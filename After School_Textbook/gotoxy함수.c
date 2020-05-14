@@ -1,0 +1,19 @@
+#include <stdio.h>
+#include <Windows.h>
+#include <conio.h>
+
+void gotoxy(int x, int y) 
+{
+	COORD Pos = { x - 1,y - 1 };
+	SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), Pos);
+}
+
+int main(void)
+{
+	for (int i = 0; i <= 10; i++) {
+		gotoxy(i, i);
+		printf("*");
+	}
+
+	return 0;
+}
